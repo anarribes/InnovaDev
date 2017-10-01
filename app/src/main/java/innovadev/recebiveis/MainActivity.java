@@ -54,6 +54,63 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnSalvar.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                String codigo = edtCodigo.getText().toString();
+                String nome = edtNome.getText().toString();
+                String endereco = edtEndereco.getText().toString();
+                String telefone = edtTelefone.getText().toString();
+
+                if(nome.isEmpty()){
+                    edtNome.setText("Este campo é obrigatório");
+                }
+                else{
+
+                    if(codigo.isEmpty()){
+                        //insert
+                        db.addCliente(new Cliente(nome,telefone,endereco));
+                        Toast.makeText(MainActivity.this, "Cliente adicionado com sucesso", Toast.LENGTH_LONG).show();
+                        limparCampos();
+                        listaCliente();
+                    }
+                    else{
+                        //update
+                        db.atualizarCliente(new Cliente(Integer.parseInt(codigo), nome,telefone,endereco));
+                        Toast.makeText(MainActivity.this, "Cliente atualizado com sucesso", Toast.LENGTH_LONG).show();
+                        limparCampos();
+                        listaCliente();
+                    }
+
+                }
+
+
+            }
+        });
+
+        btnExcluir.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                String codigo = edtCodigo.getText().toString();
+
+                if (codigo.isEmpty()){
+                    Toast.makeText(MainActivity.this, "Nenhum cliente selecionado", Toast.LENGTH_LONG).show();
+                }
+                else{
+
+                    Cliente cliente = new Cliente();
+                    cliente.setCodigo(Integer.parseInt(codigo));
+                    db.apagaCliente(cliente);
+                    limparCampos();
+                    listaCliente();
+                    Toast.makeText(MainActivity.this, "Cliente excluido com sucesso", Toast.LENGTH_LONG).show();
+                }
+            }
+
+        });
+
+
+
         listVCliente.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -74,6 +131,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
 
     void limparCampos(){
         edtCodigo.setText("");
