@@ -20,11 +20,19 @@ public class BancoDados extends SQLiteOpenHelper {
     private static final String BANCO_CLIENTE = "bd_cliente";
 
     private static final String TABELA_CLIENTE = "tb_cliente";
+    private static final String TABELA_PRODUTO = "tb_produto";
 
     private static final String COLUNA_CODIGO = "codigo";
     private static final String COLUNA_NOME = "nome";
     private static final String COLUNA_ENDERECO = "endereco";
     private static final String COLUNA_TELEFONE = "telefone";
+
+    private static final String COLUNA_CODIGOP = "codP";
+    private static final String COLUNA_NOMEP = "nomeP";
+    private static final String COLUNA_MARCAP = "marcaP";
+    private static final String COLUNA_MODELOP = "modeloP";
+    private static final String COLUNA_DESCRICAOP = "descricaoP";
+    private static final String COLUNA_PRECOP = "precoP";
 
 
     public BancoDados(Context context) {
@@ -36,8 +44,10 @@ public class BancoDados extends SQLiteOpenHelper {
 
         String QUERY = "CREATE TABLE tb_cliente (codigo INTEGER PRIMARY KEY, nome TEXT, endereco TEXT, telefone TEXT )";
 
-        db.execSQL(QUERY);
+        String produto = "CREATE TABLE tb_produto (codP INTEGER PRIMARY KEY, nomeP TEXT, marcaP TEXT, modeloP TEXT, descricaoP TEXT, precoP TEXT)";
 
+        db.execSQL(QUERY);
+        db.execSQL(produto);
     }
 
     @Override
@@ -45,6 +55,7 @@ public class BancoDados extends SQLiteOpenHelper {
 
     }
 
+    //********ADD
 
     void addCliente(Cliente cliente){
 
@@ -53,12 +64,31 @@ public class BancoDados extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
 
         values.put(COLUNA_NOME, cliente.getNome());
-        values.put(COLUNA_ENDERECO, cliente.getNome());
-        values.put(COLUNA_TELEFONE, cliente.getNome());
+        values.put(COLUNA_ENDERECO, cliente.getEndereco());
+        values.put(COLUNA_TELEFONE, cliente.getTelefone());
 
         db.insert(TABELA_CLIENTE, null, values);
         db.close();
     }
+
+    void addProduto(Produtos produto){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+
+        values.put(COLUNA_NOMEP, produto.getNomeP());
+        values.put(COLUNA_MARCAP, produto.getMarcaP());
+        values.put(COLUNA_MODELOP, produto.getModeloP());
+        values.put(COLUNA_DESCRICAOP, produto.getDescricaoP());
+        values.put(COLUNA_PRECOP, produto.getPrecoP());
+
+        db.insert(TABELA_PRODUTO, null, values);
+        db.close();
+    }
+
+
+    //******** Apaga
 
     void apagaCliente(Cliente cliente){
 
