@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Produtos"
+        android:textColor="@android:color/black"
+        android:textSize="25sp"
+        tools:layout_editor_absoluteX="119dp"
+        tools:layout_editor_absoluteY="6dp" />
+
+    <EditText
+        android:id="@+id/edtCodP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Código do produto"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="46dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/edtDescricaoP"
+        android:layout_alignEnd="@+id/edtDescricaoP" />
+
+    <EditText
+        android:id="@+id/edtNomeP"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Nome do produto"
+        android:inputType="text"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="99dp"
+        android:layout_below="@+id/edtModeloP"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="37dp" />
+
+    <EditText
+        android:id="@+id/edtDescricaoP"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Descrição"
+        android:inputType="text"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="153dp"
+        android:layout_below="@+id/edtCodP"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="29dp" />
+
+    <EditText
+        android:id="@+id/edtModeloP"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Modelo"
+        android:inputType="text"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="208dp"
+        android:layout_marginTop="18dp"
+        android:layout_below="@+id/edtPrecoP"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:id="@+id/edtMarcaP"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Marca"
+        android:inputType="text"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="259dp"
+        android:layout_below="@+id/edtNomeP"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="21dp" />
+
+    <EditText
+        android:id="@+id/edtPrecoP"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Preço"
+        android:inputType="text"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="313dp"
+        android:layout_marginTop="18dp"
+        android:layout_below="@+id/edtDescricaoP"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/btnSalvarP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salvar"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="364dp"
+        android:layout_marginRight="17dp"
+        android:layout_marginEnd="17dp"
+        android:layout_alignBaseline="@+id/btnLimparP"
+        android:layout_alignBottom="@+id/btnLimparP"
+        android:layout_toLeftOf="@+id/edtCodP"
+        android:layout_toStartOf="@+id/edtCodP" />
+
+    <Button
+        android:id="@+id/btnExcluirP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Excluir"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="364dp"
+        android:layout_alignBaseline="@+id/btnLimparP"
+        android:layout_alignBottom="@+id/btnLimparP"
+        android:layout_toRightOf="@+id/btnLimparP"
+        android:layout_toEndOf="@+id/btnLimparP"
+        android:layout_marginLeft="19dp"
+        android:layout_marginStart="19dp" />
+
+    <Button
+        android:id="@+id/btnLimparP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Limpar"
+        tools:layout_editor_absoluteX="268dp"
+        tools:layout_editor_absoluteY="364dp"
+        android:layout_below="@+id/edtMarcaP"
+        android:layout_alignLeft="@+id/edtCodP"
+        android:layout_alignStart="@+id/edtCodP"
+        android:layout_marginTop="22dp" />
+
+
+</RelativeLayout>
+
+
