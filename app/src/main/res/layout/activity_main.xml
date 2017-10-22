@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <Button
+        android:id="@+id/btnListaCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btnCadCliente"
+        android:text="Listar Clientes" />
+
+    <Button
+        android:id="@+id/btnCadCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="40dp"
+        android:text="Cadastrar Clientes" />
+
+    <Button
+        android:id="@+id/btnCadProd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btnListaCliente"
+        android:text="Cadastrar Produtos" />
+
+    <Button
+        android:id="@+id/btnListaProd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btnCadProd"
+        android:text="Listar Produtos" />
+
+    <Button
+        android:id="@+id/btnVendas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btnListaProd"
+        android:layout_marginTop="54dp"
+        android:text="Vendas" />
+
+    <Button
+        android:id="@+id/btnAreceber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="43dp"
+        android:text="Contas a receber" />
+
+    <Button
+        android:id="@+id/btnApagar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Contas a pagar"
+        android:layout_above="@+id/btnAreceber"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>
